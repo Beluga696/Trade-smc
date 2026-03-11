@@ -77,7 +77,7 @@ ${news}
     }, { timeout: 20000 });
     return resp.data?.candidates?.[0]?.content?.parts?.[0]?.text || "⚠️ Gemini ไม่ตอบ";
   } catch (err) {
-    return "⚠️ AI วิเคราะห์ไม่ได้ขณะนี้";
+    return "⚠️ Error: " + (err.response?.data?.error?.message || err.message);
   }
 }
 
